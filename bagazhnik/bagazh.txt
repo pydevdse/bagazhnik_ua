@@ -1,0 +1,2 @@
+Urls brands count: 85
+Names brands count: 85

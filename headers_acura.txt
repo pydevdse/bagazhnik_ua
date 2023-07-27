@@ -1,0 +1,14 @@
+Accept:*/*
+Accept-Encoding:gzip, deflate, br
+Accept-Language:en-US,en;q=0.9
+:Cookie:lang=ru; Cjuhj7J=a99586hs5gbg12f1240g97i9b0; _csrf-frontend=71e3a754641c247a10c9c907e99c110baaccc36363de57d91ceb05b34b1ba368a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22LUj0zMGuvEO9F61I9P-BZfnesE7UeCbX%22%3B%7D; _fbp=fb.1.1690450878750.1149768729; _gid=GA1.2.1097035500.1690450879; rngst2=%7B%22utmz%22%3A%7B%22utm_source%22%3A%22(direct)%22%2C%22utm_medium%22%3A%22(none)%22%2C%22utm_campaign%22%3A%22(direct)%22%2C%22utm_content%22%3A%22(not%20set)%22%2C%22utm_term%22%3A%22(none)%22%7D%2C%22sl%22%3A%22ba3a039e-9d41-4d94-9695-8b2895778bae%22%7D; rngst1=%7B%22callMe%22%3A%5B0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%5D%2C%22numbers%22%3Atrue%7D; garage=764275aa9498340581a93a5fa0610655f417c35b0aa39213685d55e9f1879ebea%3A2%3A%7Bi%3A0%3Bs%3A6%3A%22garage%22%3Bi%3A1%3Ba%3A1%3A%7Bi%3A0%3Bi%3A2665%3B%7D%7D; rngst_callback=%7B%22callbackNumber%22%3Afalse%2C%22inactive_project%22%3Afalse%2C%22ip_is_blocked%22%3Afalse%2C%22recaptcha%22%3A0%7D; fitguide-filter=f77c55cb525bf0ddf18c49a8aa2d4aaff1fa0c694afa8304ef43b3660b446fe9a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22fitguide-filter%22%3Bi%3A1%3Bs%3A7%3A%22brand.1%22%3B%7D; _gat_UA-53927611-1=1; _ga_VDP0CQM4HZ=GS1.1.1690450878.1.1.1690455978.60.0.0; _ga=GA1.1.122794995.1690450879
+Referer:https://bagazhnik.ua/bagazhnik-na-kryshu/acura.html
+Sec-Ch-Ua:"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"
+Sec-Ch-Ua-Mobile:?0
+Sec-Ch-Ua-Platform:"Windows"
+Sec-Fetch-Dest:empty
+Sec-Fetch-Mode:cors
+Sec-Fetch-Site:same-origin
+User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36
+X-Requested-With:XMLHttpRequest
+
