@@ -23,11 +23,24 @@ class SpiderBagazhnik(scrapy.Spider):
         for url in urls:
             model_name = url.xpath('.//span[@class="trunk-selection-name"]/text()').extract_first()
             url_model = url.xpath('.//a/@href').extract_first()
+            if url_model == response.url: continue
             if response.url.split("/")[-1].split(".")[0] in url_model:
-                models.append({"brand":brand, "model": model_name, "url": url_model})
+                model = {"brand":brand, "model": model_name, "url": url_model}
+                models.append(model)
+                yield scrapy.Request(url_model, callback=self.parse_mosel_mod, cb_kwargs={"model":model})
 
-        if len(models)>1:
-            models=models[1:]
         #print(f"Brand: {brand}  models: {models}")
-        yield {brand:models}
-        # for model in models_names:
+        # yield {brand:models}
+
+    def parse_mosel_mod(self, response, model):
+        urls = response.xpath('//li[@class="trunk-selection-item"]')
+        model_mods = []
+        for url in urls:
+            model_mod_name = url.xpath('.//span[@class="trunk-selection-name"]/text()').extract_first()
+            url_model_mod = url.xpath('.//a/@href').extract_first()
+            # print(model_mod_name, url_model_mod)
+            if url_model_mod == response.url: continue
+            if response.url.split("/")[-1].split(".")[0] in url_model_mod:
+                model.update({"model_mod": model_mod_name, "url_mod": url_model_mod})
+                model_mods.append(model)
+                yield model
