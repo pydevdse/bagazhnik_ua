@@ -12,7 +12,7 @@ class SpiderBagazhnik(scrapy.Spider):
         brands_names = response.xpath('//span[@class="trunk-selection-name"]/text()').extract()
         print(f"Urls brands count: {len(brands_urls)}")
         print(f"Names brands count: {len(brands_names)}")
-        for ind, brand_url in enumerate(brands_urls[:2]):
+        for ind, brand_url in enumerate(brands_urls):
             yield scrapy.Request(brand_url, callback=self.pares_models, cb_kwargs={'brand': brands_names[ind]})
 
     def pares_models(self, response, brand):
