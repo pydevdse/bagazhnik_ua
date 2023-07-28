@@ -25,6 +25,6 @@ class BagazhnikPipeline:
         #     return f"{bgzhnk.get('bagzhnk_name')} already exists in XLSX"
         self.df = pd.concat([self.df, pd.DataFrame.from_records([bgzhnk])])
         self.df = self.df.drop_duplicates()
-        if len(self.df.index) % 200 == 0:
+        if len(self.df.index) % 500 == 0:
             self.df.to_excel("bugazhnik.xlsx", index=False)
         return f"Counts in XLSX: {len(self.df.index)}"
