@@ -19,6 +19,12 @@ class BagazhnikPipeline:
 
     def process_item(self, item, spider):
         bgzhnk = item['name']
+        itm = self.df[self.df['bagzhnk_url'] == bgzhnk.get('bagzhnk_url') &
+                      self.df['model_mod'] == bgzhnk.get('model_mod')]
+
+        if len(itm.index)>0:
+            return f"{bgzhnk.get('bagzhnk_name')} already exists in XLSX"
         self.df = pd.concat([self.df, pd.DataFrame.from_records([bgzhnk])])
-        self.df.to_excel("bgzhs.xlsx", index=False)
-        return item
+        self.df = self.df.drop_duplicates()
+        self.df.to_excel("bugazhnik.xlsx", index=False)
+        return f"Counts in XLSX: {len(self.df.index)}"

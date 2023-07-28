@@ -30,6 +30,9 @@ DOWNLOAD_DELAY = 3
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
+DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
+DUPEFILTER_DEBUG = True
+
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
 

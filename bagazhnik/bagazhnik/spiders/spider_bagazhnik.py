@@ -40,9 +40,16 @@ class SpiderBagazhnik(scrapy.Spider):
                 yield scrapy.Request(url_model_mod, callback=self.parse_bagazhnik, cb_kwargs={"model":model})
 
     def parse_bagazhnik(self, response, model):
+        all_items_url = response.xpath('//div[@class="product-item more-link"]/a/@href').extract_first()
+        if all_items_url:
+            yield scrapy.Request(all_items_url, callback=self.parse_bagazhnik, cb_kwargs={"model":model})
         bgzhnks = response.xpath('//div[@class="catalog-section portal-level section"]')
-        active = bgzhnks[0].xpath('.//div[@class="product-item"]/div[@class="product-img"]')
-        disable = bgzhnks[0].xpath('.//div[@class="product-item disabled"]/div[@class="product-img"]')
+        if len(bgzhnks)>0:
+            active = bgzhnks[0].xpath('.//div[@class="product-item"]/div[@class="product-img"]')
+            disable = bgzhnks[0].xpath('.//div[@class="product-item disabled"]/div[@class="product-img"]')
+        else:
+            active = response.xpath('.//div[@class="product-item"]/div[@class="product-img"]')
+            disable = response.xpath('.//div[@class="product-item disabled"]/div[@class="product-img"]')
         logging.info(f"Mod: {model.get('model_mod')} active count: {len(active)}")
         logging.info(f"Mod: {model.get('model_mod')} disable count: {len(disable)}")
         for act in active:
