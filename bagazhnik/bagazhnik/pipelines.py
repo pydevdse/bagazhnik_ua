@@ -22,9 +22,10 @@ class BagazhnikPipeline:
         itm = self.df[(self.df['bagzhnk_url'] == bgzhnk.get('bagzhnk_url')) &
                       (self.df['model_mod'] == bgzhnk.get('model_mod'))]
 
-        if len(itm.index)>0:
-            return f"{bgzhnk.get('bagzhnk_name')} already exists in XLSX"
+        # if len(itm.index)>0:
+        #     return f"{bgzhnk.get('bagzhnk_name')} already exists in XLSX"
         self.df = pd.concat([self.df, pd.DataFrame.from_records([bgzhnk])])
         self.df = self.df.drop_duplicates()
-        self.df.to_excel("bugazhnik.xlsx", index=False)
+        if len(self.df.index) % 200:
+            self.df.to_excel("bugazhnik.xlsx", index=False)
         return f"Counts in XLSX: {len(self.df.index)}"

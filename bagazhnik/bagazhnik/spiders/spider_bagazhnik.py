@@ -55,6 +55,8 @@ class SpiderBagazhnik(scrapy.Spider):
         for act in active:
             mod = model.copy()
             bagzhnk_url = act.xpath('.//a/@href').extract_first()
+            if "boksy-i-korziny" in bagzhnk_url:
+                continue
             bagzhnk_name = act.xpath('.//a/img/@alt').extract_first()
             mod.update({"bagzhnk_name":bagzhnk_name, "bagzhnk_url":bagzhnk_url, "status":"active"})
             item = BagazhnikItem()
